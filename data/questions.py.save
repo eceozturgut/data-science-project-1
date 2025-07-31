@@ -1,4 +1,115 @@
-import psycopg2
+def get_customers_name_country():
+    query = """
+    SELECT customer_name, country FROM customers;
+    """
+    return query
+
+def get_top_5_expensive_orders():
+    query = """
+    SELECT * FROM orders ORDER BY total_amount DESC LIMIT 5;
+    """
+    return query
+
+def get_cheapest_3_products():
+    query = """
+    SELECT product_name, price FROM products ORDER BY price ASC LIMIT 3;
+    """
+    return query
+
+def get_oldest_10_customers():
+    query = """
+    SELECT * FROM customers ORDER BY signup_date ASC LIMIT 10;
+    """
+    return query
+
+def get_product_with_highest_stock():
+    query = """
+    SELECT product_name, stock_quantity FROM products ORDER BY stock_quantity DESC LIMIT 1;
+    """
+    return query
+
+def get_last_order():
+    query = """
+    SELECT * FROM orders ORDER BY order_date DESC LIMIT 1;
+    """
+    return query
+
+def get_products_alphabetically():
+    query = """
+    SELECT product_name FROM products ORDER BY product_name ASC;
+    """
+    return query
+
+def get_customers_with_email():
+    query = """
+    SELECT * FROM customers WHERE email IS NOT NULL ORDER BY customer_id ASC LIMIT 5;
+    """
+    return query
+
+def get_cheapest_orders():
+    query = """
+    SELECT order_id, total_amount FROM orders ORDER BY total_amount ASC LIMIT 3;
+    """
+    return query
+
+def get_customers_in_turkey():
+    query = """
+    SELECT * FROM customers WHERE country = 'Turkey' ORDER BY customer_name ASC;
+    """
+    return qdef get_customers_name_country():
+    query = """
+    SELECT customer_name, country FROM customers;
+    """
+    return query
+
+def get_top_5_expensive_orders():
+    query = """
+    SELECT * FROM orders ORDER BY total_amount DESC LIMIT 5;
+    """
+    return query
+
+def get_cheapest_3_products():
+    query = """
+    SELECT product_name, price FROM products ORDER BY price ASC LIMIT 3;
+    """
+    return query
+
+def get_oldest_10_customers():
+    query = """
+    SELECT * FROM customers ORDER BY signup_date ASC LIMIT 10;
+    """
+    return query
+
+def get_product_with_highest_stock():
+    query = """
+    SELECT product_name, stock_quantity FROM products ORDER BY stock_quantity DESC LIMIT 1;
+    """
+    return query
+
+def get_last_order():
+    query = """
+    SELECT * FROM orders ORDER BY order_date DESC LIMIT 1;
+    """
+    return query
+
+def get_products_alphabetically():
+    query = """
+    SELECT product_name FROM products ORDER BY product_name ASC;
+    """
+    return query
+
+def get_customers_with_email():
+    query = """
+    SELECT * FROM customers WHERE email IS NOT NULL ORDER BY customer_id ASC LIMIT 5;
+    """
+    return query
+
+def get_cheapest_o
+    SELECT order_id, total_amount FROM orderers_in_turkey():
+    query = """
+    SELECT * FROM customers WHERE country = 'Turkey' ORDER BY customer_name ASC;
+    """
+    return quemport psycopg2
 
 ## Bu değeri localinde çalışırken kendi passwordün yap. Ama kodu pushlarken 'postgres' olarak bırak.
 password = 'postgres'
@@ -8,7 +119,7 @@ def connect_db():
     host="localhost",
     port=5432,
     database="postgres",
-    user="ece",
+    user="postgres",
     password=password)
     return conn
 
@@ -111,4 +222,3 @@ def question_10_query():
     cursor.close()
     connection.close()
     return data
-
