@@ -5,11 +5,12 @@ password = 'postgres'
 
 def connect_db():
     conn = psycopg2.connect(
-    host="localhost",
-    port=5432,
-    database="postgres",
-    user="ece",
-    password=password)
+        host="localhost",
+        port=5432,
+        database="postgres",
+        user="Ece",
+        password=password
+    )
     return conn
 
 
